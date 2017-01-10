@@ -1,4 +1,19 @@
-<div class="jumbotron text-center">
-  <h1>Contact Page</h1>
-  <p>{{ message }}</p>
+<div class="row">
+    <div class="col-lg-6 col-sm-12" id="doughnut-chart" ng-controller="indicadoresCtrl">
+        <div class="panel panel-default">
+            <div class="panel-heading">CHART</div>
+            <div class="panel-body">
+          	<canvas id="bar" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-series="series"></canvas>
+
+            </div>
+        </div>
+    </div>
+
+
+<div ng-repeat="indicador in indicadores">
+	{{ indicador.nome_orgao }}
 </div>
+
+<button ng-click="pegarDados()">pegar dados</button>
+
+

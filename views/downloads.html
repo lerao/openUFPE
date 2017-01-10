@@ -1,7 +1,6 @@
+
 <div class="row">
     <div class="col-lg-12">
-
-
 <div class="wrapper">
   <div class="content-wrapper">
     <section class="content-header">
@@ -10,9 +9,11 @@
       <ol class="breadcrumb">
         <li><a href="#/"><i class="fa fa-home"></i>Início</a></li>
         <li class="active">Downloads</li>
+        <li><a><button ng-click="pegarDadosPessoa()">pegar dados</button></a></li>
+
       </ol>
     </section>
-
+    <div ng-repeat="post in posts">
     <section class="content">
       <div id="dataset-description">
         <h2>Descrição do Conjunto de Dados</h2>
@@ -20,47 +21,48 @@
           <tbody>
             <tr>
               <td>Título</td>
-              <td></td>
+              <td>Pessoa</td>
             </tr>
             <tr>
               <td>URI</td>
-              <td></td>
+              <td>http://localhost:8080/find/pessoa</td>
             </tr>
             <tr>
               <td>Palavras-chave</td>
-              <td><span></span>, <span></span></td>
+              <td><span>{{ post.keywords }}</span></td>
             </tr>
           </tbody>
           <tbody id="provenance-info">
             <tr>
               <td>Publication date</td>
-              <td><span></span></td>
+              <td><span>2017</span></td>
             </tr>
             <tr>
               <td>Criadores</td>
-              <td><span>Filipe Epifânio</span>, <span>Priscila Thynfani</span>, <span>Wilker Cavalcante</span>, <span>Bernadette Lóscio</span> - &#123; rivcs, rpga, bfl &#125;@cin.ufpe.br</td>
+              <td><span>{{ post.creator }}</span>
             </tr>
           </tbody>
           <tbody>
             <tr>
               <td>Frequência de Atualização</td>
-              <td></td>
+              <td>Every Hour</td>
             </tr>
             <tr>
               <td>Tema</td>
-              <td>Dados Abertos UFPE</td>
+                <td>{{ post.theme }}</td>
             </tr>
             <tr id="locale-parameters">
               <td>Linguagem</td>
-              <td>Português, Inglês</td>
+              <td>{{ post.language }}</td>
             </tr>
             <tr>
               <td>Versão Atual</td>
-              <td>1.0</td>
+              <td>{{ post.last_version }}</td>
             </tr>
           </tbody>
         </table>
       </div>
+
       <div id="dataset-distributions">
         <h2>Formatos dos Conjuntos de Dados</h2>
         <h3>RDF</h3>
@@ -204,6 +206,7 @@
         </table>
       </div>
       <h2>Arquivos para Download</h2>
+
       <table class="human-readable-example">
         <tbody>
           <tr>
@@ -265,9 +268,10 @@
         </tbody>
       </table>
     </section>
-
+</div>
   </div>
 </div>
 
   </div>
+
     </div>

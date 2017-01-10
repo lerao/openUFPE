@@ -1,7 +1,5 @@
 var app = angular
-  .module('openacademy', [
-    'ui.router'
-  ]);
+  .module('openacademy', ['ui.router','chart.js']);
 
 // Definindo Rotas
 app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
